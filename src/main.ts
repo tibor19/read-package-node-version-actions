@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-import { getPackageVersion } from './getPackageVersion';
+import { getNodeVersion } from './getNodeVersion';
 
 async function run() {
   try {
@@ -7,7 +7,7 @@ async function run() {
 
     core.debug(`Load package.json at ${path}`);
 
-    const result = getPackageVersion(path);
+    const result = getNodeVersion(path);
 
     core.debug(`set output: version: ${result}`);
     core.setOutput('version', result);

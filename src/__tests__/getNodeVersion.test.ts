@@ -1,11 +1,11 @@
 import fs from 'fs';
 
-import { findPackageJson, getPackageVersion } from '../getPackageVersion';
+import { findPackageJson, getNodeVersion } from '../getNodeVersion';
 
 const fixturePath = './src/__tests__/fixture';
 const fixture = `./src/__tests__/fixture/package.json`;
 
-describe('getPackageVersion', () => {
+describe('getNodeVersion', () => {
   describe('findPackageJson', () => {
     test('find package.json', () => {
       const result = findPackageJson(fixturePath);
@@ -14,11 +14,11 @@ describe('getPackageVersion', () => {
     });
   });
 
-  describe('getPackageVersion', () => {
+  describe('getNodeVersion', () => {
     test('get version text within package.json', () => {
-      const result = getPackageVersion(fixturePath);
+      const result = getNodeVersion(fixturePath);
 
-      expect(result).toBe('0.0.0');
+      expect(result).toBe('10.x');
     });
   });
 });
