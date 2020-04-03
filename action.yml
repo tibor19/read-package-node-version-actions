@@ -1,8 +1,8 @@
 name: 'Read package.json node version'
 description: 'Output node version number from package.json engines field'
-color: 'blue'
-icon: 'check-square'
-
+branding:
+  icon: 'check-square'
+  color: 'blue'
 inputs:
   path:
     description: 'Path of package.json'
