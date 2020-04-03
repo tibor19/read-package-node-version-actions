@@ -1,12 +1,15 @@
-name: 'Read package.json version'
-description: 'Output version numbers with package.json'
+name: 'Read package.json node version'
+description: 'Output node version number from package.json engines field'
+color: 'blue'
+icon: 'check-square'
+
 inputs:
   path:
     description: 'Path of package.json'
     default: "./"
 outputs:
   version:
-    description: "Version of package"
+    description: "Node version from engines field in package.json"
 runs:
   using: 'node12'
   main: 'lib/main.js'
