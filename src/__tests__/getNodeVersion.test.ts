@@ -18,7 +18,7 @@ describe('getNodeVersion', () => {
     test('get version text within package.json', () => {
       const result = getNodeVersion(fixturePath);
 
-      expect(result).toBe('10.x');
+      expect(result).toBe('12.13.x');
     });
   });
 });

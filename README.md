@@ -1,6 +1,6 @@
-# Read package version actions
+# Read node version from engines field in package.json
 
-Read your version in `package.json`
+Read your node version from `package.json`
 
 ## Example workflow
 
@@ -9,13 +9,15 @@ Read your version in `package.json`
 
 {
   "name": "your-package",
-  "version": "1.0.0",
+  "engines": {
+    "node": "12.13.x"
+  }
 }
 ```
 
 `.github/workflow/test.yml`
 ```yml
-name: Get version from package.json
+name: Get node version from package.json
 
 on: push
 
@@ -26,13 +28,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Read package.json
-        uses: tyankatsu0105/read-package-version-actions@v1
-        id: package-version
+      - name: Read node from package.json
+        uses: culshaw/read-package-node-version-actions@v1
+        id: package-node-version
 
-      - name: Show version number
-        run: echo "Version is ${{ steps.package-version.outputs.version }}"
-        # Version is 1.0.0
+      - name: Show node version number
+        run: echo "Version is ${{ steps.package-node-version.outputs.version }}"
+        # Version is 12.13.x
 ```
 
 ## Inputs
@@ -46,7 +48,9 @@ Path of `package.json`, `./` by default.
 
 {
   "name": "your-package",
-  "version": "0.5.0",
+  "engines": {
+    "node": "12.13.x"
+  }
 }
 ```
 
@@ -62,15 +66,15 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Read package.json
-        uses: tyankatsu0105/read-package-version-actions@v1
+      - name: Read node from package.json
+        uses: culshaw/read-package-node-version-actions@v1
         with: 
           path: "./path/to/package.json"
-        id: package-version
+        id: package-node-version
 
       - name: Show version number
         run: echo "Version is ${{ steps.package-version.outputs.version }}"
-        # Version is 0.5.0
+        # Version is 12.13.x
 ```
 
 # License
