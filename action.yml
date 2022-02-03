@@ -1,4 +1,4 @@
-name: 'Read package.json node version'
+name: 'Improved Read package.json node version'
 description: 'Output node version number from package.json engines field'
 branding:
   icon: 'check-square'
