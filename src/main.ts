@@ -7,7 +7,7 @@ async function run() {
     core.debug(`Load package.json at ${path}`);
 
     const fallback = core.getInput('fallback-version')
-    core.debug(`Fallback ${path}`);
+    core.debug(`Fallback version ${fallback}`);
 
     const result = getNodeVersion(path) || fallback;
 
