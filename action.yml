@@ -7,6 +7,10 @@ inputs:
   path:
     description: 'Path of package.json'
     default: "./"
+    required: false
+  fallback-version:
+    description: 'Which version should use if package.json/engines is not found'
+    required: false
 outputs:
   version:
     description: "Node version from engines field in package.json"
