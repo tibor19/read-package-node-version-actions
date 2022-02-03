@@ -1,6 +1,0 @@
-{
-  "name": "fixture",
-  "engines": {
-    "node": "12.13.x"
-  }
-}

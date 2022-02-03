@@ -1,51 +1,37 @@
 {
-  "engines": {
-    "node": "12.13.x"
-  },
-  "name": "read-package-node-version-actions",
+  "name": "node-version-from-package-json",
   "version": "1.0.0",
-  "private": true,
   "description": "Output node version numbers from package.json",
-  "main": "lib/main.js",
+  "engines": {
+    "node": "16.3.2"
+  },
+  "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint --fix src/**/*.ts",
-    "commit": "git-cz",
-    "precommit": "npm run build && lint-staged && npm run test",
-    "build": "ncc build src/main.ts -C --out lib/",
-    "build:watch": "tsc -w",
-    "test": "jest"
+    "build": "ncc build src/index.js -C --out lib/",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/culshaw/read-package-node-version-actions.git"
+    "url": "git+https://github.com/tibor19/read-package-node-version-actions.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "culshaw (culshaw@gmail.com)",
+  "author": {
+    "name": "Tiberiu Covaci",
+    "url": "https://github.com/tibor19"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tibor19/static-website-deploy/issues"
+  },
+  "homepage": "https://github.com/tibor19/static-website-deploy#readme",
   "dependencies": {
-    "@actions/core": "^1.0.0"
+    "@actions/core": "^1.6.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.7.0",
-    "@typescript-eslint/parser": "^2.7.0",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
-    "lint-staged": "^9.4.3",
-    "prettier": "^1.19.1",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.1",
-    "@zeit/ncc": "0.22.1"
+    "@vercel/ncc": "0.33.1"
   }
 }
